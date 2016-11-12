@@ -39,7 +39,7 @@ rules:
   no-css-comments: 1
   no-debug: 1
   no-ids: 2
-  no-important: 2
+  no-important: 1
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties: 1
@@ -60,5 +60,4 @@ rules:
         - background-color
         - color
         - font
-        - margin
         - content
