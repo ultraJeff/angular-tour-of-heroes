@@ -36,6 +36,12 @@ const HEROES: Hero[] = [
   			<span class="badge">{{hero.id}}</span> {{hero.name}}
 			</li>
 		</ul>
+		<!-- my-hero-detail is the name we set as the selector in the HeroDetailComponent metadata. -->
+		<!-- We will soon update the AppComponent template so that it binds its selectedHero property to the hero property of our HeroDetailComponent. -->
+		<!-- Notice that the hero property is the target of a property binding — it's in square brackets to the left of the (=).
+		Angular insists that we declare a target property to be an input property. If we don't, Angular rejects the binding and throws an error. -->
+		<!-- The two components won't coordinate until we bind the selectedHero property of the AppComponent to the HeroDetailComponent element's hero property like this: -->
+		<my-hero-detail [hero]="selectedHero"></my-hero-detail>
 	`
 })
 

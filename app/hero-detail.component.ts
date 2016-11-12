@@ -18,5 +18,7 @@ import { Hero } from './hero';
 })
 
 export class HeroDetailComponent {
+	// This is the preferred way of declaring that your component property is an input!
+	@Input()
 	hero: Hero;
 }
