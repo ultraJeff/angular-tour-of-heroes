@@ -11,4 +11,9 @@ export class HeroService {
 		// We're simulating the behavior of an ultra-fast, zero-latency server, by returning an immediately resolved Promise with our mock heroes as the result.
 		return Promise.resolve(HEROES);
 	}
+	getHeroesSlowly(): Promise<Hero[]> {
+		return new Promise<Hero[]>(resolve =>
+			setTimeout(resolve, 2000)) // delay 2 seconds
+			.then(() => this.getHeroes()); // call regular getHeroes method
+	}
 }
