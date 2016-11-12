@@ -1,5 +1,4 @@
 var webpack = require('webpack');
-//var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 //var autoprefixer = require('autoprefixer');
@@ -11,9 +10,11 @@ module.exports = {
     vendor: './app/vendor.ts',
     app: './app/main.ts'
   },
+
   resolve: {
     extensions: ['', '.ts', '.js']
   },
+
   module: {
     // preLoaders: [
     //   {
@@ -30,14 +31,12 @@ module.exports = {
       //   ]
       // },
       {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+        test: /\.ts$/,
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
       },
       {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw'
+        test: /\.html$/,
+        loader: 'html'
       },
       // {
       //   test: /\.(css|scss)$/,
@@ -49,24 +48,22 @@ module.exports = {
       //   ]
       // },
       {
-        test: /\.ts$/,
-        exclude: /node_modules/,
-        loaders: [
-          ['awesome-typescript-loader', 'angular2-template-loader']
-        ]
-      },
-      {
-        test: /.html$/,
-        loaders: [
-          'html'
-        ]
-      },
-      {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'
+      },
+      {
+        test: /\.css$/,
+        exclude: helpers.root('src', 'app'),
+        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+      },
+      {
+        test: /\.css$/,
+        include: helpers.root('src', 'app'),
+        loader: 'raw'
       }
     ]
   },
+
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       // Should use this for multiple entry points, not just app
