@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './hero';
 // Importing the service allows us to reference it in our code.
@@ -36,7 +36,7 @@ import '../theme/global.scss';
 	providers: [HeroService]
 })
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 	// These properties are public by default
 	// heroes is considered an uninitialized property here
 	heroes: Hero[];
@@ -49,6 +49,10 @@ export class AppComponent {
 	// Now Angular will know to supply an instance of the HeroService when it creates a new AppComponent.
 	// This is called dependency injection... that's why services are injectables and heroService is an injector (once  we register the HeroService provider in AppComponent's metadata)
 	constructor( private heroService: HeroService) {}
+
+	ngOnInit(): void {
+		this.getHeroes();
+	}
 
 	// We don't really need a dedicated method to wrap one line. We write it anyway:
 	getHeroes(): void {
