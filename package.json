@@ -4,8 +4,6 @@
   "scripts": {
     "bsstart": "tsc && concurrently \"tsc -w\" \"lite-server\" ",
     "lite": "lite-server",
-    "tsc": "tsc",
-    "tsc:w": "tsc -w",
     "start": "webpack-dev-server --inline --progress --port 8080 --display-error-details",
     "build": "rimraf dist && webpack --config config/webpack.prod.js --progress --profile --bail"
   },
@@ -51,6 +49,7 @@
     "postcss-loader": "^0.8.2",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.2",
+    "sass-lint": "^1.10.2",
     "sass-loader": "^3.1.2",
     "style-loader": "^0.13.1",
     "tslint": "^3.15.1",

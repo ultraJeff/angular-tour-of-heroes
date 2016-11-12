@@ -56,7 +56,7 @@ export class AppComponent implements OnInit {
 
 	// We don't really need a dedicated method to wrap one line. We write it anyway:
 	getHeroes(): void {
-		// heroes => this.heroes = heroes is shorthand and an unbound `this` version (no that) of function(heroes) { return that.heroes = heroes }
+		// heroes => this.heroes = heroes is the arrow function denoting an unbound `this` version (no that) of function(heroes) { return that.heroes = heroes }
 		this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
 	}
 
