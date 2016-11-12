@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+import '../theme/fonts.css';
 import '../theme/global.scss';
 
 // IT'S IMPORTANT THAT THIS CLASS IS ABOVE THE @COMPONENT METADATA!
