@@ -4,21 +4,6 @@ import { Hero } from './hero';
 import '../theme/fonts.css';
 import '../theme/global.scss';
 
-// Converting this to a service eventually!
-// all caps case for constants!
-const HEROES: Hero[] = [
-	{ id: 11, name: 'Joey Bag of Donuts' },
-	{ id: 12, name: 'The Comedian' },
-	{ id: 13, name: 'Dave Navarro' },
-	{ id: 14, name: 'Sammy David Sr.' },
-	{ id: 15, name: 'Wild Bill' },
-	{ id: 16, name: 'Super Someone' },
-	{ id: 17, name: 'Dr. Holistic' },
-	{ id: 18, name: 'Captain Mutiny' },
-	{ id: 19, name: 'Ferretman' },
-	{ id: 20, name: 'The Leeping Locust' }
-];
-
 @Component({
   selector: 'razorfish-heroes',
   // styles: [require('./app.component.scss').toString()],
