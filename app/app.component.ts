@@ -1,14 +1,8 @@
 import { Component } from '@angular/core';
+import { Hero } from './hero';
 
 import '../theme/fonts.css';
 import '../theme/global.scss';
-
-// IT'S IMPORTANT THAT THIS CLASS IS ABOVE THE @COMPONENT METADATA!
-// CONSOLE ERROR OTHERWISE!
-export class Hero {
-	id: number;
-	name: string;
-}
 
 // Converting this to a service eventually!
 // all caps case for constants!
