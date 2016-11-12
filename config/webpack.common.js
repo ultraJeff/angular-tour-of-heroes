@@ -39,9 +39,20 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.scss$/,
+        //include: helpers.root('theme', 'app'),
+        // exclude: /node_modules/,
         loader: ExtractTextPlugin.extract('style', 'css!postcss!sass')
       },
+      // {
+      //   test: /\.(css|scss)$/,
+      //   loaders: [
+      //     'style',
+      //     'css',
+      //     'sass',
+      //     'postcss'
+      //   ]
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'

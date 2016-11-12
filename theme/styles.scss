@@ -1,20 +1,17 @@
 // Master Styles
 @import url('https://fonts.googleapis.com/css?family=Poppins');
 
-@import 'theme/variables';
+@import 'variables';
+@import '../app/app.component';
 
-razorfish-heroes {
-  h1 {
-    color: $color-navy;
-    font-family: $regular-font;
-    font-size: 250%;
-  }
-  h2, h3 {
-    color: $color-ccc;
-    font-family: $regular-font;
-    font-weight: lighter;
-  }
-  body {
-    margin: $two-rem;
-  }
+h1 {
+  color: $color-navy;
+  font-family: $regular-font;
+  font-size: 250%;
+}
+
+h2, h3 {
+  color: $color-ccc;
+  font-family: $regular-font;
+  font-weight: lighter;
 }

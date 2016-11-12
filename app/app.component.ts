@@ -26,7 +26,7 @@ const HEROES: Hero[] = [
 
 @Component({
   selector: 'razorfish-heroes',
-  styles: [require('./app.component.scss').toString()],
+  // styles: [require('./app.component.scss').toString()],
   template: `
   	<h1>{{title}}</h1>
   	<h2>My Heroes</h2>
