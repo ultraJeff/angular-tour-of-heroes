@@ -48,7 +48,7 @@ Typescript really isn't too bad. It's a lot like C# in its syntax, but ultimatel
 - [decorators](https://www.typescriptlang.org/docs/handbook/decorators.html) (technically ES7)
 
 and type declarations common in BE languages. Type declarations might look like this:
->>>
+```typescript
 {
 	id: number,
 	asl: [number, string, string], //tuple (ad-hoc class)
@@ -56,7 +56,7 @@ and type declarations common in BE languages. Type declarations might look like 
 	likesCats: boolean,
 	favoriteFoods: string[] //array of strings
 }
->>>
+```
 
 ####Webpack
 This section is a work in progress... in the mean time, check out [Angular's Webpack Introduction Tutorial](https://angular.io/docs/ts/latest/guide/webpack.html). Their Webpack code base and this one's are very similar!
