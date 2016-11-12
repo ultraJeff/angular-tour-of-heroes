@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import '../theme/styles.scss';
+import '../theme/global.scss';
 
 // IT'S IMPORTANT THAT THIS CLASS IS ABOVE THE @COMPONENT METADATA!
 // CONSOLE ERROR OTHERWISE!
@@ -40,7 +40,7 @@ const HEROES: Hero[] = [
 		</ul>
   	<h2>{{hero.name}} details!</h2>
   	<div>
-  		<label>id: </label>{{hero.id}}
+  		<label class="ion-arrow-right-a">id: </label>{{hero.id}}
 		</div>
 		<div>
   		<label>name: </label>

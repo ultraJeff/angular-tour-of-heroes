@@ -3,7 +3,6 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var helpers = require('./helpers');
-var precss = require('precss');
 
 // multiple extract instances
 // var extractCSS = new ExtractTextPlugin('theme/**/[name].css');
@@ -31,37 +30,30 @@ module.exports = {
     loaders: [
       {
         test: /.json$/,
-        loaders: [
-          'json'
-        ]
+        loader: 'json'
       },
       {
         test: /\.ts$/,
-        loaders: ['awesome-typescript-loader', 'angular2-template-loader']
+        loaders: ['awesome-typescript-loader', 'angular2-template-loader'],
+        exclude: /node_modules/
       },
       {
         test: /\.html$/,
         loader: 'html'
       },
-      // {
-      //   test: /\.css$/,
-      //   //include: helpers.root('theme', 'app'),
-      //   // exclude: /node_modules/,
-      //   loader: extractCSS.extract('style', 'css?sourceMap')
-      // },
-      // {
-      //   test: /\.scss$/i,
-      //   loader: extractSCSS.extract('','css!postcss!sass?sourceMap')
-      // },
       {
         test: /\.(css|scss)$/,
-        loaders: [
-          'style',
-          'css',
-          'postcss',
-          'sass?sourceMap'
-        ]
+        exclude: helpers.root('app'),
+        loader: ExtractTextPlugin.extract(
+          'style', // Backup style loader
+          'css?sourceMap!postcss!sass?sourceMap'
+        )
       },
+      // {
+      //   test: /\.(css|scss)$/,
+      //   include: helpers.root('app'),
+      //   loader: 'raw'
+      // },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'
@@ -81,7 +73,7 @@ module.exports = {
     })
   ],
 
-  postcss: () => [autoprefixer, precss],
+  postcss: () => [autoprefixer],
   tslint: {
     configuration: require(helpers.root('tslint.json'))
   }
