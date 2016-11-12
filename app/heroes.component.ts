@@ -40,7 +40,7 @@ export class HeroesComponent implements OnInit {
 	// The constructor itself does nothing. The parameter simultaneously defines a private heroService property and identifies it as a HeroService injection site.
 	// Now Angular will know to supply an instance of the HeroService when it creates a new HeroComponent.
 	// This is called dependency injection... that's why services are injectables and heroService is an injector (once  we register the HeroService provider in HeroComponent's metadata)
-	constructor( private heroService: HeroService) {}
+	constructor(private heroService: HeroService) {}
 
 	ngOnInit(): void {
 		this.getHeroes();
