@@ -33,19 +33,19 @@ const HEROES: Hero[] = [
   	<h2>My Heroes</h2>
   	<ul class="heroes">
   		<!-- ngFor means “take each hero in the heroes array, store it in the local hero variable, and make it available to the corresponding template instance”. -->
-  		<li *ngFor="let hero of heroes">
+  		<li *ngFor="let hero of heroes" (click)="onSelect(hero)">
   			<!-- each hero goes here i.e. bind the array of heroes in our component to our template, iterate over them, and display them individually -->
   			<!-- use built-in structural directive *ngFor - the asterisk in front of ngFor is critical! It tells Angular that the attached element constitute the master template -->
   			<span class="badge">{{hero.id}}</span> {{hero.name}}
 			</li>
 		</ul>
-  	<h2>{{hero.name}} details!</h2>
+  	<h2>{{selectedHero.name}} details!</h2>
   	<div>
-  		<label class="ion-arrow-right-a">id: </label>{{hero.id}}
+  		<label class="ion-arrow-right-a">id: </label>{{selectedHero.id}}
 		</div>
 		<div>
   		<label>name: </label>
-  		<input [(ngModel)]="hero.name" placeholder="name">
+  		<input [(ngModel)]="selectedHero.name" placeholder="name">
 		</div>
 	`
 })
@@ -56,8 +56,9 @@ export class AppComponent {
 	heroes = HEROES;
 	title = 'Tour of Heroes';
 	// Need to define the type for hero here because Typescript cannot infer it otherwise
-	hero: Hero = {
-		id: 1,
-		name: 'Windstorm'
-	};
+	selectedHero: Hero;
+
+	onSelect(hero: Hero): void {
+		this.selectedHero = hero;
+	}
 }
