@@ -4,15 +4,11 @@ var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var autoprefixer = require('autoprefixer');
 var helpers = require('./helpers');
 
-// multiple extract instances
-// var extractCSS = new ExtractTextPlugin('theme/**/[name].css');
-// var extractSCSS = new ExtractTextPlugin('theme/**/[name].scss');
-
 module.exports = {
   entry: {
-    polyfills: './app/polyfills.ts',
-    vendor: './app/vendor.ts',
-    app: './app/main.ts'
+    polyfills: 'app/polyfills.ts',
+    vendor: 'app/vendor.ts',
+    app: 'app/main.ts'
   },
 
   resolve: {
