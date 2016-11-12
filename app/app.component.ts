@@ -26,6 +26,15 @@ const HEROES: Hero[] = [
   selector: 'my-app',
   template: `
   	<h1>{{title}}</h1>
+  	<h2>My Heroes</h2>
+  	<ul class="heroes">
+  		<!-- ngFor means “take each hero in the heroes array, store it in the local hero variable, and make it available to the corresponding template instance”. -->
+  		<li *ngFor="let hero of heroes">
+  			<!-- each hero goes here i.e. bind the array of heroes in our component to our template, iterate over them, and display them individually -->
+  			<!-- use built-in structural directive *ngFor - the asterisk in front of ngFor is critical! It tells Angular that the attached element constitute the master template -->
+  			<span class="badge">{{hero.id}}</span> {{hero.name}}
+			</li>
+		</ul>
   	<h2>{{hero.name}} details!</h2>
   	<div>
   		<label>id: </label>{{hero.id}}
