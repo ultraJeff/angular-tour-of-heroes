@@ -30,6 +30,18 @@ module.exports = {
       //     'json'
       //   ]
       // },
+      // {
+      //   // Load sass files from the theme folder only then convert to css and bundle them
+      //   test: /\.scss$/,
+      //   include: helpers.root('theme'),
+      //   loader: ExtractTextPlugin.extract('style', 'css?postcss!sass')
+      // },
+      // {
+      //   // Load sass files from within the application folder then convert to a string, then css and include in the javascript module
+      //   test: /\.scss$/,
+      //   include: helpers.root('app'),
+      //   loader: 'raw!postcss!sass'
+      // },
       {
         test: /\.ts$/,
         loaders: ['awesome-typescript-loader', 'angular2-template-loader']
@@ -38,35 +50,36 @@ module.exports = {
         test: /\.html$/,
         loader: 'html'
       },
-      // {
-      //   test: /\.(css|scss)$/,
-      //   loaders: [
-      //     'style',
-      //     'css',
-      //     'sass',
-      //     'postcss'
-      //   ]
-      // },
+      {
+        test: /\.(css|scss)$/,
+        loaders: [
+          'style',
+          'css',
+          'sass',
+          'postcss'
+        ]
+      },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'
       },
-      {
-        test: /\.css$/,
-        exclude: helpers.root('src', 'app'),
-        loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
-      },
-      {
-        test: /\.css$/,
-        include: helpers.root('src', 'app'),
-        loader: 'raw'
-      }
+      // {
+      //   test: /\.css$/,
+      //   exclude: helpers.root('src', 'app'),
+      //   loader: ExtractTextPlugin.extract('style', 'css?sourceMap')
+      // },
+      // {
+      //   test: /\.css$/,
+      //   include: helpers.root('src', 'app'),
+      //   loader: 'raw'
+      // }
     ]
   },
 
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
-      // Should use this for multiple entry points, not just app
+      // Order of these entry points is important!
+      // Common chunks are removed from left and deposited right
       name: ['app', 'vendor', 'polyfills']
     }),
 

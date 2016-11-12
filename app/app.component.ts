@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-//import '../styles.css';
+import '../theme/styles.scss';
 
 // IT'S IMPORTANT THAT THIS CLASS IS ABOVE THE @COMPONENT METADATA!
 // CONSOLE ERROR OTHERWISE!
@@ -26,7 +26,7 @@ const HEROES: Hero[] = [
 
 @Component({
   selector: 'my-app',
-  //styleUrls: ['./app.component.css'],
+  styles:[require('./app.component.css').toString()],
   template: `
   	<h1>{{title}}</h1>
   	<h2>My Heroes</h2>
