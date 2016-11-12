@@ -24,8 +24,8 @@ I have removed the following:
 ###TODO:
 - Remove lite-server and browsersync (competing with webpack and webpack-dev-server)
 - Add [Mock API](http://www.mockapi.io/) integration
-- Copy this over to Five Field Checkout!
 - Remove concurrently (npm)
+- Set up Webpack to auto import new SCSS
 - Add package.json script to automatically run `npm install`
 - Add scss-lint info to Webpack dev server builds
 - Discuss `config/helpers.js` more in the README
@@ -74,7 +74,7 @@ This section is a work in progress... in the mean time, check out [Angular's Web
 > `npm install`
 
 ###To run dev server:
-> `npm start` and then navigate to http://localhost:8080
+> `npm start` and then navigate to [http://localhost:8080](http://localhost:8080)
 
 ###To build to production:
 > `npm run build`
