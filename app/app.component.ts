@@ -14,8 +14,8 @@ import '../theme/global.scss';
 		<nav>
 			<!-- routerLink is preferred way to navigate with router -->
 			<!-- we define a routing instruction with a one-time binding to our route path -->
-			<a class="button button-primary" routerLink="/dashboard">Dashboard</a>
-			<a class="button button-primary" routerLink="/heroes">Heroes</a>
+			<a class="button button-primary" routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+			<a class="button button-primary" routerLink="/heroes" routerLinkActive="active">Heroes</a>
 		</nav>
 		<router-outlet></router-outlet>
 	`

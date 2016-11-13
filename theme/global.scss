@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+.button.active {
+  background-color: $color-sun;
+}
+
 // body {
 //   font-family: $regular-font;
 //   line-height: 1;
