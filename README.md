@@ -32,7 +32,7 @@ I have removed the following:
 - Explain Webpack flow in the README
 - Testing suite? :/
 - Talk about Rx/JS
-- Add .eslintrc
+- Add .eslintrc (for Webpack files) / Convert Webpack files to .ts
 
 ---
 
