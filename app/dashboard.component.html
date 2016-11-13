@@ -1,8 +1,9 @@
 <h3>Top Heroes</h3>
 <div class="row">
-	<div *ngFor="let hero of heroes" class="three columns">
+	<!-- routerlink is a link parameters array -->
+	<a *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]" class="three columns">
 		<div class="module hero">
 			<h4>{{hero.name}}</h4>
 		</div>
-	</div>
+	</a>
 </div>
