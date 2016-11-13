@@ -38,17 +38,19 @@ module.exports = {
         loader: 'html'
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         loader: ExtractTextPlugin.extract(
           'style', // Backup style loader
-          'css?sourceMap!postcss!sass?sourceMap'
+          'css!postcss'
         )
       },
-      // {
-      //   test: /\.(css|scss)$/,
-      //   include: helpers.root('app'),
-      //   loader: 'raw'
-      // },
+      {
+        test: /\.scss$/,
+        loader: ExtractTextPlugin.extract(
+          'style', // Backup style loader
+          'css!postcss!sass'
+        )
+      },
       {
         test: /\.(png|jpe?g|gif|svg|woff|woff2|ttf|eot|ico)$/,
         loader: 'file?name=assets/[name].[hash].[ext]'
