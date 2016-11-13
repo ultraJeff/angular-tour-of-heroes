@@ -25,7 +25,14 @@ import { HeroService } from './hero.service';
 		<!-- Notice that the hero property is the target of a property binding — it's in square brackets to the left of the (=).
 		Angular insists that we declare a target property to be an input property. If we don't, Angular rejects the binding and throws an error. -->
 		<!-- The two components won't coordinate until we bind the selectedHero property of the HeroComponent to the HeroDetailComponent element's hero property like this: -->
-		<my-hero-detail [hero]="selectedHero"></my-hero-detail>
+		<!-- <my-hero-detail [hero]="selectedHero"></my-hero-detail> -->
+		<div *ngIf="selectedHero">
+			<h2>
+				<!-- Notice the uppercase pipe we slipped into the interpolation binding! -->
+				{{selectedHero.name | uppercase}} is my hero
+			</h2>
+			<button (click)="gotoDetail()">View Details</button>
+		</div>
 	`
 })
 
