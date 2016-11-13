@@ -7,6 +7,10 @@ import { HEROES } from './mock-heroes';
 // Don't forget the parentheses!
 @Injectable()
 export class HeroService {
+	getHero(id: number): Promise<Hero> {
+		return this.getHeroes()
+						.then(heroes => heroes.find(hero => hero.id === id));
+	}
 	getHeroes(): Promise<Hero[]> {
 		// We're simulating the behavior of an ultra-fast, zero-latency server, by returning an immediately resolved Promise with our mock heroes as the result.
 		return Promise.resolve(HEROES);
