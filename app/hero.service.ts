@@ -16,6 +16,7 @@ export class HeroService {
 
 	create(name: string): Promise<Hero> {
 		return this.http
+			// .post(), .get(), .delete() are observables which are a stream of events that we can process with array-like operators.
 			.post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
 			.toPromise()
 			.then(res => res.json().data)

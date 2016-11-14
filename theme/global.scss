@@ -18,19 +18,17 @@
   margin-bottom: 0;
 }
 
-// body {
-//   font-family: $regular-font;
-//   line-height: 1;
-// }
-
-// h1 {
-//   color: $color-navy;
-//   font-family: $regular-font;
-//   font-size: 250%;
-// }
-
-// h2, h3 {
-//   color: $color-red;
-//   font-family: $regular-font;
-//   font-weight: lighter;
-// }
+.search-result{
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+}
+#search-box{
+  width: 200px;
+  height: 20px;
+}

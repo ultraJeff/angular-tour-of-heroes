@@ -3,6 +3,8 @@ import { BrowserModule } 				from '@angular/platform-browser';
 import { FormsModule } 					from '@angular/forms';
 import { HttpModule }           from '@angular/http';
 
+import './rxjs-extensions';
+
 import { AppRoutingModule }     from './app-routing.module';
 
 // Imports for loading & configuring the in-memory web api (fake BE)
@@ -13,7 +15,8 @@ import { AppComponent } 				from './app.component';
 import { DashboardComponent } 	from './dashboard.component';
 import { HeroesComponent } 			from './heroes.component';
 import { HeroDetailComponent } 	from './hero-detail.component';
-import { HeroService } 					from './hero.service';
+import { HeroService }           from './hero.service';
+import { HeroSearchComponent } 					from './hero-search.component';
 
 // If it starts with an @ - it's called a decorator... they're experimental!
 @NgModule({
@@ -30,11 +33,13 @@ import { HeroService } 					from './hero.service';
   	AppComponent,
   	DashboardComponent,
   	HeroesComponent,
-  	HeroDetailComponent
+  	HeroDetailComponent,
+    HeroSearchComponent
 	],
 	// The providers array tells Angular to create a fresh instance of the HeroService when it creates a new HeroComponent.
 	// The HeroComponent can use that service to get heroes and so can every child component of its component tree.
   // This would be where you added any guard services to prevent unauthorized routing
+  // Not adding HeroSearchService here because it's only needed in hero-search.component.ts
 	providers: [ HeroService ],
   bootstrap: [ AppComponent ]
 })
