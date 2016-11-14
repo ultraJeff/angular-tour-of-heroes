@@ -1,4 +1,10 @@
 <h2>My Heroes</h2>
+<div>
+    <label>Hero name:</label> <input #heroName />
+    <button (click)="add(heroName.value); heroName.value=''">
+        Add
+    </button>
+</div>
 <ul class="heroes">
     <!-- ngFor means “take each hero in the heroes array, store it in the local hero variable, and make it available to the corresponding template instance”. -->
     <!-- [class.selected] is saying “apply the selected class if the heroes match, remove it if they don’t”. -->

@@ -14,6 +14,13 @@ export class HeroService {
 
 	constructor(private http: Http) { }
 
+	create(name: string): Promise<Hero> {
+		return this.http
+			.post(this.heroesUrl, JSON.stringify({name: name}), {headers: this.headers})
+			.toPromise()
+			.then(res => res.json().data)
+			.catch(this.handleError);
+	}
 	getHero(id: number): Promise<Hero> {
 		return this.getHeroes()
 						.then(heroes => heroes.find(hero => hero.id === id));
@@ -27,7 +34,7 @@ export class HeroService {
 	}
 	getHeroesSlowly(): Promise<Hero[]> {
 		return new Promise<Hero[]>(resolve =>
-			setTimeout(resolve, 5000)) // delay 2 seconds
+			setTimeout(resolve, 500)) // delay 2 seconds
 			.then(() => this.getHeroes()); // call regular getHeroes method
 	}
 	update(hero: Hero): Promise<Hero> {
