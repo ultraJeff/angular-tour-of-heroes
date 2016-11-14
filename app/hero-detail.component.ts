@@ -25,6 +25,11 @@ export class HeroDetailComponent implements OnInit {
 		private location: Location
 	) {}
 
+	save(): void {
+		this.heroService.update(this.hero)
+				.then(() => this.goBack());
+	}
+
 	// To prevent going completely out of app consider CanDeactivate guard
 	goBack(): void {
 		this.location.back();
